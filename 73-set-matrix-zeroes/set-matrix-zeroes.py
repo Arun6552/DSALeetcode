@@ -1,28 +1,25 @@
 class Solution:
-    def setZeroes(self, matrix):
-        m, n = len(matrix), len(matrix[0])
-        firstRowZero = any(matrix[0][j] == 0 for j in range(n))
-        firstColZero = any(matrix[i][0] == 0 for i in range(m))
 
-        # Mark zeros in the first row and column
-        for i in range(1, m):
-            for j in range(1, n):
-                if matrix[i][j] == 0:
-                    matrix[i][0] = 0
-                    matrix[0][j] = 0
+    def  setRows(self,matrix,row,column):
+        for i in range(column):
+            matrix[row][i]=0
+    def setColumns(self,matrix,row,column):
+        for i in range(row):
+            matrix[i][column]=0
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+       
 
-        # Set matrix cells to zero based on markers
-        for i in range(1, m):
-            for j in range(1, n):
-                if matrix[i][0] == 0 or matrix[0][j] == 0:
-                    matrix[i][j] = 0
-
-        # Zero out the first row if needed
-        if firstRowZero:
-            for j in range(n):
-                matrix[0][j] = 0
-
-        # Zero out the first column if needed
-        if firstColZero:
-            for i in range(m):
-                matrix[i][0] = 0
+        row = len(matrix)
+        column = len(matrix[0])
+        viewMatrix = [[matrix[i][j] for j in range(column)] for i in range(row)]
+       
+        for i in range(row):
+            for j in range(column):
+                if viewMatrix[i][j] ==0:
+                    self.setRows(matrix,i,column)
+                    self.setColumns(matrix,row,j)
+       
+        
