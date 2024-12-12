@@ -14,8 +14,8 @@ class Solution:
 
         row = len(matrix)
         column = len(matrix[0])
-        viewMatrix = deepcopy(matrix)
-        #viewMatrix = [[matrix[i][j] for j in range(column)] for i in range(row)]
+        #viewMatrix = deepcopy(matrix)
+        viewMatrix = [[matrix[i][j] for j in range(column)] for i in range(row)]
        
         for i in range(row):
             for j in range(column):
