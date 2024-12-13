@@ -1,26 +1,28 @@
 class Solution:
 
-    def  setRows(self,matrix,row,column):
-        for i in range(column):
-            matrix[row][i]=0
-    def setColumns(self,matrix,row,column):
-        for i in range(row):
-            matrix[i][column]=0
+    def setRows(self,matrix,r,c):
+        for i in range(c):
+            matrix[r][i] =0
+        
+    def setColumn(self,matrix,r,c):
+        for i in range(r):
+            matrix[i][c]=0
+
+
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
         """
-       
 
-        row = len(matrix)
-        column = len(matrix[0])
-        #viewMatrix = deepcopy(matrix)
-        viewMatrix = [[matrix[i][j] for j in range(column)] for i in range(row)]
-       
-        for i in range(row):
-            for j in range(column):
+        r = len(matrix)
+        c = len(matrix[0])
+        viewMatrix = deepcopy(matrix)
+        
+        for i in range(r):
+            for j in range(c):
                 if viewMatrix[i][j] ==0:
-                    self.setRows(matrix,i,column)
-                    self.setColumns(matrix,row,j)
-       
+                    self.setRows(matrix,i,c)
+                    self.setColumn(matrix,r,j)
+        
+
         
