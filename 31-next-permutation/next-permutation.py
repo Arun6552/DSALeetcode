@@ -5,7 +5,7 @@ class Solution:
         """
         Swap the number at the breakpoint with the closest higher number.
         """
-        # Find the smallest number greater than nums[breakPointNum]
+        # 
         for i in range(len(nums) - 1, breakPointNum, -1):
             if nums[i] > nums[breakPointNum]:
                 nums[i], nums[breakPointNum] = nums[breakPointNum], nums[i]
