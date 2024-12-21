@@ -8,8 +8,8 @@ class Solution:
     def transpose(self,matrix):
         row = len(matrix)
         col = len(matrix[0])
-        for i in range(row-1):
-            for j in range(i+1,col):
+        for i in range(row):
+            for j in range(i):
                 matrix[i][j],matrix[j][i] = matrix[j][i], matrix[i][j]
         self.rowReverse(matrix)
         return matrix
