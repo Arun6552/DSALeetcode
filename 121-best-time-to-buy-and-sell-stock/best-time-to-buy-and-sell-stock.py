@@ -16,7 +16,7 @@ class Solution:
         maxProfit = 0 
         minValue  = prices[0]
         cost = 0
-        for i in range(len(prices)):
+        for i in range(1,len(prices)):
             cost = prices[i] - minValue
             maxProfit = max(maxProfit,cost)
             minValue = min(minValue,prices[i])
