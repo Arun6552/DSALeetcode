@@ -1,8 +1,10 @@
 class Solution:
-    def rowReverse(self,matrix):
-        row = len(matrix)
-        for i in range(row):
-            matrix[i] = matrix[i][::-1]
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        matrix = self.transpose(matrix)
+  
     def transpose(self,matrix):
         row = len(matrix)
         col = len(matrix[0])
@@ -12,11 +14,12 @@ class Solution:
         self.rowReverse(matrix)
         return matrix
 
-    def rotate(self, matrix: List[List[int]]) -> None:
-        """
-        Do not return anything, modify matrix in-place instead.
-        """
-        matrix = self.transpose(matrix)
+    def rowReverse(self,matrix):
+        row = len(matrix)
+        for i in range(row):
+            matrix[i] = matrix[i][::-1]
+
+   
         
        
         
