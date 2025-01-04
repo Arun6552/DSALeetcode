@@ -16,6 +16,7 @@ class Solution:
                 while current_num + 1 in num_set:
                     current_num += 1
                     current_length += 1
+                num = current_num
 
                 max_length = max(max_length, current_length)
 
